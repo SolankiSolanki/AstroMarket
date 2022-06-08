@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">AstroMarket</string>
+    <string name="nav_drawer">Navigation Drawer</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string name="strike"> <strike>₹1,500 </strike> </string>
+    <string name="prefix"> <strike>₹</strike> </string>
+    <string name="suggest_remedy">Suggest Remedy</string>
+    <string name="type">Type:</string>
+    <string name="from">From:</string>
+    <string name="paid_remedy">Paid Remedy</string>
+    <string name="free_remedy">Free Remedy</string>
+    <string name="suggested">Suggested:</string>
+    <string name="suggest">Suggest</string>
+    <string name="sample_string">Thank you  \nfor purchasing.</string>
+
+
+    <string-array name="array_name">
+        <item>Array Item One</item>
+        <item>Array Item Two</item>
+        <item>Array Item Three</item>
+    </string-array>
+
+    <string-array name="array_sort">
+        <item>Relevance</item>
+        <item>Low to High</item>
+        <item>High to Low</item>
+    </string-array>
+</resources>

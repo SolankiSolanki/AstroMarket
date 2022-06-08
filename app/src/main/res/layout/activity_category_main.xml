@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_bag"
+    tools:context=".ui.Category_MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_remedy_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/back1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/LightBlue"
+                android:padding="5dp"
+                android:src="@drawable/left_back" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_remedy_category">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/text_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                android:text="Categories"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_edit_tarot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_category"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:id="@+id/pv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/base_blue"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_edit_tarot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_tarot_icon"
+                        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                        android:gravity="center_vertical"
+                        android:hint="Tarot Cards"
+                        android:inputType="textVisiblePassword"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:drawablePadding="10dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ListView
+                android:id="@+id/exp_list_view"
+                android:layout_width="100dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/card_edit_tarot"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:textAlignment="center"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1_edit_tarot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exp_list_view"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/pv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text1_edit_tarot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_crystal_bracelet"
+                        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                        android:gravity="center_vertical"
+                        android:hint="Crystal Bracelet"
+                        android:inputType="textVisiblePassword"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:drawablePadding="10dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ListView
+                android:id="@+id/exp1_list_view"
+                android:layout_width="100dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/card1_edit_tarot"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:textAlignment="center"
+                android:visibility="gone"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2_edit_tarot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exp1_list_view"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/pv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/base_blue"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text2_edit_tarot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_evil_eye_icon"
+                        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                        android:gravity="center_vertical"
+                        android:hint="Evil Eye"
+                        android:inputType="textVisiblePassword"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:drawablePadding="10dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ListView
+                android:id="@+id/exp2_list_view"
+                android:layout_width="100dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/card2_edit_tarot"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:textAlignment="center"
+                android:visibility="gone" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2_edit_kawach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exp2_list_view"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/pv3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text2_edit_kawach"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_kawach_icon"
+                        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                        android:gravity="center_vertical"
+                        android:hint="Kawach"
+                        android:inputType="textVisiblePassword"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:drawablePadding="10dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ListView
+                android:id="@+id/exp2_list_view1"
+                android:layout_width="100dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/card2_edit_kawach"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:textAlignment="center"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2_edit_pearls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exp2_list_view1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/pv4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/base_blue"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text2_edit_pearls"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_pearls_icon"
+                        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:hint="Pearls"
+                        android:inputType="textVisiblePassword"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ListView
+                android:id="@+id/exp2_list_view2"
+                android:layout_width="100dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/card2_edit_pearls"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:textAlignment="center"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2_edit_rudraksha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exp2_list_view2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/pv5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text2_edit_rudraksha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_rudra_icon"
+                        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                        android:gravity="center_vertical"
+                        android:hint="Rudraksha"
+                        android:inputType="textVisiblePassword"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:drawablePadding="10dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ListView
+                android:id="@+id/exp2_list_view3"
+                android:layout_width="100dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/card2_edit_rudraksha"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:textAlignment="center"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2_edit_gemstones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exp2_list_view3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/pv6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/base_blue"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text2_edit_gemstones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_gemstone_icon"
+                        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                        android:gravity="center_vertical"
+                        android:hint="Gemstones"
+                        android:inputType="textVisiblePassword"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:drawablePadding="10dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ListView
+                android:id="@+id/exp2_list_view4"
+                android:layout_width="100dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/card2_edit_gemstones"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:textAlignment="center"
+                android:layout_marginBottom="25dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

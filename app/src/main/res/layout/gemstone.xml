@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_gemstone"
+        android:layout_width="140dp"
+        android:layout_height="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_img_gemstone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+                <ImageView
+                    android:id="@+id/illuminatedtarot_img_gemstone"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:src="@drawable/gemstone"
+                    android:scaleType="fitXY"/>
+                <LinearLayout
+                    android:id="@+id/linear_gemstone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape"
+                    android:layout_margin="5dp"
+                    android:padding="3dp"
+                    android:layout_gravity="end"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/text_16_gemstone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16"
+                        android:textSize="8sp"
+                        android:textColor="	#008000"/>
+                    <TextView
+                        android:id="@+id/text_percent_gemstone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textSize="8sp"
+                        android:textColor="	#008000"/>
+                    <TextView
+                        android:id="@+id/text_off_gemstone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OFF"
+                        android:textSize="8sp"
+                        android:textColor="	#008000"
+                        />
+
+                </LinearLayout>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/text_gemstone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Evil Eye for Relationship"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="100dp"
+                android:textColor="#006497" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/rupee_text2_gemstone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,250"
+                    android:textColor="#006497"
+
+                    />
+                <TextView
+                    android:id="@+id/strike_text3_gemstone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/strike"
+                    android:textColor="#41403C3C"
+                    android:layout_marginLeft="5dp"
+                    />
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

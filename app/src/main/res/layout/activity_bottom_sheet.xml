@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottomsheet_gradient"
+            android:layout_margin="0dp"
+            android:padding="20dp">
+            <LinearLayout
+                android:id="@+id/linear_edit_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/cross"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_back"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Delivery Address"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="#2A2A2A"
+                    android:textSize="18sp"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                app:layout_constraintTop_toBottomOf="@id/linear_edit_address"
+                >
+
+                <ScrollView
+                    android:id="@+id/scroll1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:scrollbars="none"
+                    >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraint_location"
+                    >
+
+            <LinearLayout
+                android:id="@+id/linear1_edit_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/linear_edit_address"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:ignore="NotSibling">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_location"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Use Current Location"
+                    android:layout_marginLeft="23dp"
+                    android:textColor="#006497"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/text_pin_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use Pin Code"
+                android:textColor="#2C2C2C"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="0dp"
+                app:layout_constraintTop_toBottomOf="@id/linear1_edit_address"
+                app:layout_constraintLeft_toLeftOf="parent" />
+            <RelativeLayout
+                android:id="@+id/relative_pin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="@drawable/shape_linear"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_pin_code">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/shape_sumbit"
+                    android:gravity="center"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/text_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/relative_pin"
+                android:text="Choose from Saved Addresses"
+                android:textColor="#2C2C2C"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_edit_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/text_choose"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:nestedScrollingEnabled="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addnew"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Add New +"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:background="@drawable/edit_address_done_shape"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerview_edit_address"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="100dp"
+                />
+
+           <!-- <LinearLayout
+                android:id="@+id/form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility=""
+                app:layout_constraintTop_toBottomOf="@id/addnew">-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/addnew"
+                android:visibility="gone"
+                >
+
+            <TextView
+                android:id="@+id/text_add_new_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add New Delivery Address"
+                android:textColor="#2A2A2A"
+                app:layout_constraintTop_toBottomOf="@id/addnew"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                tools:ignore="NotSibling" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/text_add_new_address"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="Name *"
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_name"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_name" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_buildingname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/edittextview_name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="House no./ Building Name *"
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_buildingname"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_buildingname" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_roadname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/edittextview_buildingname"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="Road Name/ Area/ Colony *"
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_roadname"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_roadname" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_Landmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/edittextview_roadname"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="Landmark"
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_Landmark"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_Landmark" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_city"
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/edittextview_Landmark"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="City *"
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_city"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_city" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_state"
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/edittextview_Landmark"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="State *"
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_state"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_state" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_pincode"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/edittextview_city"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="Pin Code *"
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_pincode"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_pincode" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_email"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/edittextview_state"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="Email *"
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_email"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_email" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_mobileno"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/edittextview_pincode"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="Mobile no. *"
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_mobileno"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_mobileno" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextview_second_mobile_no"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_address_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/edittextview_email"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp"
+                android:text="Secondary Mobile No."
+                android:textColor="#006497"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/edittextview_second_mobile_no"
+                app:layout_constraintStart_toStartOf="@+id/edittextview_second_mobile_no" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:background="@drawable/edit_address_done_shape"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secondary"
+                android:layout_marginTop="50dp"
+                tools:ignore="MissingConstraints"
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--</LinearLayout>-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

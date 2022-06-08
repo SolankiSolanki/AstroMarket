@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_bag"
+    tools:context=".ui.BagActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_bag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        app:contentInsetLeft="-10dp"
+        app:contentInsetStart="-10dp"
+        app:contentInsetStartWithNavigation="-10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_bag"
+        app:title="Items in Bag"
+        app:titleTextAppearance="@style/Toolbar.TitleText1"
+        app:titleTextColor="#2A2A2A">
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView
+        android:id="@+id/scrollview1_bag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/btn_bag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_bag">
+
+        <RelativeLayout
+            android:id="@+id/relative_bag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp">
+
+            <LinearLayout
+                android:id="@+id/linear_bag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deliver to: "
+                    android:textColor="#A1ACB2"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shubham Singh"
+                    android:textColor="#006794"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear1_bag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linear_bag"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="House no."
+                    android:textColor="#323333"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="53, Karunya Nagar, Coimbatore, Tamilnadu"
+                    android:textColor="#323333"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/scrollview_bag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp">
+
+                        <LinearLayout
+                            android:id="@+id/linear_edit_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:src="@drawable/ic_back" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:text="Select Delivery Address"
+                                android:textAllCaps="false"
+                                android:textColor="#2A2A2A"
+                                android:textSize="18sp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear1_edit_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/linear_edit_address">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/ic_location" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="23dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Use Current Location"
+                                android:textAllCaps="false"
+                                android:textColor="#006497"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/text_pin_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Use Pin Code"
+                            android:textColor="#2C2C2C"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/linear1_edit_address" />
+
+                        <RelativeLayout
+                            android:id="@+id/relative_pin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/shape_linear"
+                            android:orientation="horizontal"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_pin_code">
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="130dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/shape_sumbit"
+                                android:gravity="center"
+                                android:text="Submit"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/text_choose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Choose from Saved Addresses"
+                            android:textColor="#2C2C2C"
+                            android:textSize="16sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/relative_pin" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerview_edit_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_choose" />
+
+                        <TextView
+                            android:id="@+id/text_add_new_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Add New Delivery Address"
+                            android:textColor="#2A2A2A"
+                            android:textSize="15sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/recyclerview_edit_address" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_add_new_address"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="Name *"
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_name"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_name" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_buildingname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_name"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="House no./ Building Name *"
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_buildingname"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_buildingname" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_roadname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_buildingname"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="Road Name/ Area/ Colony *"
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_roadname"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_roadname" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_Landmark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_roadname"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="Landmark"
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_Landmark"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_Landmark" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_city"
+                            android:layout_width="155dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_Landmark"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="City *"
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_city"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_city" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_state"
+                            android:layout_width="155dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_Landmark"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="State *"
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_state"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_state" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_pincode"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_city"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="Pin Code *"
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_pincode"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_pincode" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_email"
+                            android:layout_width="190dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_state"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="Email *"
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_email"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_email" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_mobileno"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_pincode"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="Mobile no. *"
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_mobileno"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_mobileno" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittextview_second_mobile_no"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/edit_address_bg"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_email"
+                            tools:layout_editor_absoluteX="20dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="-7dp"
+                            android:background="@color/white"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="1dp"
+                            android:text="Secondary Mobile No."
+                            android:textColor="#006497"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/edittextview_second_mobile_no"
+                            app:layout_constraintStart_toStartOf="@+id/edittextview_second_mobile_no" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="100dp"
+                            android:background="@drawable/edit_address_done_shape"
+                            android:text="Done"
+                            android:textColor="@color/white"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/edittextview_mobileno" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+            </ScrollView>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_edit_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linear_bag"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_edit" />
+
+            <LinearLayout
+                android:id="@+id/linear2_bag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linear1_bag"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="641011,"
+                    android:textColor="#323333"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Mob. no."
+                    android:textColor="#323333"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 9876543210"
+                    android:textColor="#323333"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_bag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linear2_bag"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerview_bag"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp">
+
+                <LinearLayout
+                    android:id="@+id/linear3_bag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/ic_group_86"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_total_mrp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total MRP:"
+                            android:textColor="#A6B1B7" />
+
+                        <TextView
+                            android:id="@+id/text_total_mrp_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:drawableLeft="@drawable/ic_rupee_symbol"
+                            android:drawableTint="#A6B1B7"
+                            android:text="1250.00"
+                            android:textColor="#A6B1B7" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_coupondiscount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Coupon Discount:"
+                            android:textColor="#A6B1B7" />
+
+                        <TextView
+                            android:id="@+id/text_total_discount_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:drawableLeft="@drawable/ic_rupee_symbol"
+                            android:drawableTint="#1A9E36"
+                            android:text=" 50.00"
+                            android:textColor="#1A9E36" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_conveniencefee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Convenience fee:"
+                            android:textColor="#A6B1B7" />
+
+                        <TextView
+                            android:id="@+id/text_conveniencefee_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:drawableLeft="@drawable/ic_rupee_symbol"
+                            android:drawableTint="#A6B1B7"
+                            android:text="70.00"
+                            android:textColor="#A6B1B7" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_effectiveprice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Effective Price:"
+                            android:textColor="#A6B1B7" />
+
+                        <TextView
+                            android:id="@+id/text_effectiveprice_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:drawableLeft="@drawable/ic_rupee_symbol"
+                            android:drawableTint="#A6B1B7"
+                            android:text="1270.00"
+                            android:textColor="#A6B1B7" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_CGST"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CGST %:"
+                            android:textColor="#A6B1B7" />
+
+                        <TextView
+                            android:id="@+id/text_CGST_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:drawableLeft="@drawable/ic_rupee_symbol"
+                            android:drawableTint="#A6B1B7"
+                            android:text="114.30(9%)"
+                            android:textColor="#A6B1B7" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_SGST"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SGST %:"
+                            android:textColor="#A6B1B7" />
+
+                        <TextView
+                            android:id="@+id/text_SGST_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:drawableLeft="@drawable/ic_rupee_symbol"
+                            android:drawableTint="#A6B1B7"
+                            android:text="114.30(9%)"
+                            android:textColor="#A6B1B7" />
+                    </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="60dp">
+
+                            <TextView
+                                android:id="@+id/text_total_amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentBottom="true"
+                                android:text="Total Amount:"
+                                android:textColor="#7BB0C7" />
+
+                            <TextView
+                                android:id="@+id/text_total_money"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:drawableLeft="@drawable/ic_rupee_symbol"
+                                android:drawableTint="#7BB0C7"
+                                android:text="1498.60"
+                                android:textColor="#7BB0C7" />
+                        </RelativeLayout>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/img_gradient_bagbutton"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_bag"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/proceed_to_pay_shape"
+        android:text="Proceed to Pay"
+        android:textAllCaps="false"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="@id/view1"
+        app:layout_constraintBottom_toBottomOf="@id/view1"
+        app:layout_constraintEnd_toEndOf="@id/view1"
+        app:layout_constraintStart_toStartOf="@id/view1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

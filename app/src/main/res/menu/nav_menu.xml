@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_wallet"
+        android:title="Wallet" />
+
+    <item
+        android:id="@+id/nav_following"
+        android:title="Following" />
+
+    <item
+        android:id="@+id/nav_chat"
+        android:title="Chat History" />
+
+    <item
+        android:id="@+id/nav_call"
+        android:title="Call History" />
+
+    <item
+        android:id="@+id/nav_notifications"
+        android:title="Notifications" />
+
+    <item
+        android:id="@+id/nav_orders"
+        android:title="My Orders" />
+
+    <item
+        android:id="@+id/nav_profiles"
+        android:title="Saved Profiles" />
+
+    <item
+        android:id="@+id/nav_market"
+        android:title="AstroMarket" />
+
+    <item
+        android:id="@+id/nav_report"
+        android:title="Report" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Settings" />
+
+</menu>
